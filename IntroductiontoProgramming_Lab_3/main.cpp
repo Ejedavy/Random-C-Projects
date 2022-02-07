@@ -3,7 +3,7 @@
 using namespace std;
 
 // This is a person class
-class Person
+class Person{
 private:
 		string name;
 		int age;
@@ -22,7 +22,7 @@ public:
 		void celebrateBirthday();
 		
 		//Operator overloading
-		Person operator-  ();
+		Person operator- ();
 		
 		//Copy Assignment 
 		Person & operator =(const Person& rhs);
@@ -46,14 +46,14 @@ void Person::celebrateBirthday (){
 }
 
 /*Operator overloading*/
-Person Person::operator-(){
+Person Person::operator- (){
 			Person* temp = new Person{this -> name, this -> age};
 			temp -> alive = false;
 			return (*temp);
 }
 
 // Copy Assignment
-Person& Person::operator=(const &rhs){
+Person& Person::operator=(const Person& rhs){
 	this -> name = rhs.name;
 	this -> age = rhs.age;
 	return (*this);
